@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="shortcut icon" href="#" />
-    <title>System registration of 'Users'</title>
+    <link rel="shortcut icon" href="assets/favicon_io/favicon-16x16.png" />
+    <title>Sistema de Registros de Usuários</title>
 
     <!-- CSS personalização -->
     <link href="assets/css/style.css" rel="stylesheet">
@@ -33,7 +33,7 @@
 <body>
     <header>
         <br>
-        <h3 class='text-center'>CRUD: Ajax, Jquery, Bootstrap e SQl</h3>
+        <h3 class='text-center'>Sistema de Registros de Usuários</h3>
         <br>
     </header>
 
@@ -47,7 +47,6 @@
         </div>
     </div>
     <br>
-
     <div class="container box">
         <div class="row">
             <div class="col-lg-12">
@@ -55,14 +54,14 @@
                     <table id="tableusers" class="table table-striped table-bordered table-condensed" style="width:100%">
                         <thead class="text-center">
                             <tr>
-                                <th>Id user</th>
-                                <th>Name User</th>
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>Genre</th>
-                                <th>Password</th>
+                                <th>Identificação do usuário</th>
+                                <th>Nome de usuário</th>
+                                <th>Nome</th>
+                                <th>Sobrenome</th>
+                                <th>Genero</th>
+                                <th>Senha</th>
                                 <th>Status</th>
-                                <th>Actions</th>
+                                <th>Ações</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -86,13 +85,13 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <label class="col-form-label">User Name:</label>
+                                    <label class="col-form-label">Nome de Usuário:</label>
                                     <input type="text" class="form-control" id="user_name">
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <label class="col-form-label">First Name</label>
+                                    <label class="col-form-label">Nome</label>
                                     <input type="text" class="form-control" id="user_firstname">
                                 </div>
                             </div>
@@ -100,21 +99,26 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <label class="col-form-label">Last Name</label>
+                                    <label class="col-form-label">Sobrenome</label>
                                     <input type="text" class="form-control" id="user_lastname">
                                 </div>
                             </div>
                             <div class="col-lg-6">
-                                <div class="form-group">
-                                    <label class="col-form-label">Genre</label>
-                                    <input type="text" class="form-control" id="user_genre">
-                                </div>
+                                <label class="col-form-label">Genero</label>
+                                <select id="genre_selected" class="form-select">
+                                    <option>Selecione</option>
+                                    <option value="Masculino">Masculino</option>
+                                    <option value="Feminino">Feminino</option>
+                                    <option value="Outros">Outros</option>
+                                    <option value="NaoInformado">Prefiro não informar</option>
+                                </select>
+
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-8">
                                 <div class="form-group">
-                                    <label class="col-form-label">Password</label>
+                                    <label class="col-form-label">Senha</label>
                                     <input type="text" class="form-control" id="user_password">
                                 </div>
                             </div>
@@ -122,19 +126,15 @@
                                 <label class="col-form-label">Status</label>
                                 <select id="status_selected" class="form-select">
                                     <option>Selecione</option>
-                                    <option id="user_status">Ativo</option>
-                                    <option id="user_status">Inativo</option>
+                                    <option value="Ativo">Ativo</option>
+                                    <option value="Inativo">Inativo</option>
                                 </select>
-                                <!-- <div class="form-group">
-                                    <label class="col-form-label">Status</label>
-                                    <input type="text" class="form-control" id="user_status">
-                                </div> -->
                             </div>
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                        <button type="submit" id="btnSave" class="btn btn-success">Salvar</button>
+                        <button type="button" class="btn btn-secondary sm" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" id="btnSave" class="btn btn-success sm">Salvar</button>
                     </div>
                 </form>
             </div>
